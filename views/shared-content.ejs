@@ -1,0 +1,48 @@
+<link rel="stylesheet" href="/css/shared-content.css">
+<div class="container">
+    <div class="card">
+        <div class="content-icon" id="contentIcon">
+            <i class="fas fa-<%= contentType === 'link' ? 'link' : 'file-lines' %>"></i>
+        </div>
+
+        <h1 id="contentTitle">Shared Content</h1>
+        <p class="content-type" id="contentType"><%= contentType === 'link' ? 'Shared Link' : 'Shared Text' %></p>
+
+        <div class="content-container">
+            <% if (contentType === 'link') { %>
+                <a href="<%= content -%>" target="_blank" rel="noopener noreferrer" id="linkContent" class="content-link"><%= content -%></a>
+            <% } else { %>
+                <div class="content-text" id="textContent"><%= content -%></div>
+            <% } %>
+        </div>
+
+        <div class="copy-container">
+            <button class="copy-btn" id="copyBtn">
+                <i class="far fa-copy"></i>
+                <span id="copyText">Copy Content</span>
+            </button>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const copyBtn = document.getElementById('copyBtn');
+        const copyMeElement = document.getElementById(<%= contentType === 'link' ? 'linkContent' : 'copyText' %>);
+
+        // Copy text functionality
+        copyBtn.addEventListener('click', async () => {
+            try {
+                await navigator.clipboard.writeText(copyMeElement.textContent);
+                copyBtn.classList.add('copied');
+
+                setTimeout(() => {
+                    copyBtn.classList.remove('copied');
+                }, 2000);
+            } catch (err) {
+                console.error('Failed to copy: ', err);
+                alert('Failed to copy. Please try again.');
+            }
+        });
+    });
+</script>

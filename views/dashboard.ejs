@@ -1,0 +1,96 @@
+﻿<link rel="stylesheet" href="/css/dashboard.css">
+<script src="/js/dashboard.js"></script>
+
+<div class="container">
+    <header>
+        <div class="logo">
+            <i class="fas fa-cloud-upload-alt"></i>
+            <h1>Upload Dashboard</h1>
+        </div>
+    </header>
+
+    <div class="storage-info">
+        <div class="storage-header">
+            <div class="storage-title">Storage Usage</div>
+            <div class="storage-amount"><%- diskSpaceInfo.free %> GB of <%- diskSpaceInfo.size %> GB used</div>
+        </div>
+        <div class="storage-bar">
+            <div class="storage-used" style="width: <%- diskSpaceInfo.percentUsed %>%"></div>
+        </div>
+    </div>
+
+    <div class="upload-section">
+        <h2 class="section-title">Upload Content</h2>
+
+        <div class="tab-container">
+            <div class="tab active" data-tab="file">File Upload</div>
+            <div class="tab" data-tab="text">Text Snippet</div>
+            <div class="tab" data-tab="link">Link Sharing</div>
+        </div>
+
+        <div class="upload-content active" id="file-content">
+            <div id="upload-area" class="file-upload">
+                <i class="fas fa-cloud-upload-alt"></i>
+                <p>Drag & drop your file here</p>
+                <p>or</p>
+                <button class="browse-btn">Browse Files</button>
+                <input type="file" class="file-input" id="fileInput">
+            </div>
+
+            <div id="file-preview"  class="file-preview">
+                <div class="file-preview-container">
+                    <i class="fas fa-file" style="font-size: 24px; color: #4361ee;"></i>
+                    <div>
+                        <div id="file-name" style="font-weight: 600; color: #2b2d42;"></div>
+                        <div id="file-size" style="font-size: 14px; color: #6c757d;"></div>
+                    </div>
+                </div>
+                <button id="remove-file" class="remove-file">
+                    <i class="fas fa-trash-alt"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="upload-content" id="text-content">
+            <div class="text-link-input">
+                <div class="input-group">
+                    <label for="textContent">Text Content</label>
+                    <textarea id="textContent" placeholder="Paste your text here..."></textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="upload-content" id="link-content">
+            <div class="text-link-input">
+                <div class="input-group">
+                    <label for="linkContent">Link URL</label>
+                    <input type="url" id="linkContent" placeholder="https://example.com">
+                </div>
+            </div>
+        </div>
+
+        <div class="expiration-section">
+            <h3 class="section-title">Auto-Delete After</h3>
+            <div class="expiration-options">
+                <label class="expiration-option selected">
+                    <input type="radio" name="expiration" value="1h" checked>
+                    <span>1 Hour</span>
+                </label>
+                <label class="expiration-option">
+                    <input type="radio" name="expiration" value="4h">
+                    <span>4 Hours</span>
+                </label>
+                <label class="expiration-option">
+                    <input type="radio" name="expiration" value="1d">
+                    <span>1 Day</span>
+                </label>
+                <label class="expiration-option">
+                    <input type="radio" name="expiration" value="7d">
+                    <span>7 Days</span>
+                </label>
+            </div>
+        </div>
+
+        <button class="upload-btn">Upload & Generate Link</button>
+    </div>
+</div>

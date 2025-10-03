@@ -1,0 +1,56 @@
+﻿services:
+  filesharer:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: filesharer:latest
+    container_name: filesharer
+    restart: unless-stopped
+
+    ports:
+      - "3535:3000" # Host:Container (Host port can be changed without any issues)
+
+    environment:
+      - APP_UPLOAD_PASSWORD=password # IMPORTANT: Change this!
+      - NODE_ENV=production # Don't change this
+      - PORT=3000 # Don't change this! When you want a different port, change the host port above.
+      - FORCE_HTTPS_LINKS=false # This is only needed if the server is running behind a reverse proxy with http. (and the reverse proxy is running with https)
+      - MAX_FILE_SIZE=250 # The maximum file size that can be uploaded in MB.
+
+     # Uncomment if all uploads are to be stored outside the docker container.
+     #volumes:
+      # Persistent storage for uploads.
+      # - ./persisted_uploads:/usr/src/app/uploads
+      # Persistent storage for metadata.
+      # - ./persisted_metadata:/usr/src/app/metadata
+
+    # --- Security settings ---
+
+    # Run as an unprivileged user
+    user: "appuser" # Must match the USER in the Dockerfile
+
+    # Remove kernel capabilities that are not needed
+    cap_drop:
+      - ALL
+
+    # Prevents processes in the container from gaining new privileges
+    security_opt:
+      - "no-new-privileges:true"
+
+    # Resource limitations
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 256M
+        reservations:
+          cpus: '0.25'
+          memory: 128M
+
+    # --- Logging ---
+
+    logging:
+      driver: "json-file" # Standard Docker log driver
+      options:
+        max-size: "10m"
+        max-file: "3"

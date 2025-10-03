@@ -1,0 +1,40 @@
+﻿<link rel="stylesheet" href="/css/upload-success.css">
+<script src="/js/upload-success.js"></script>
+
+<div class="container">
+    <div class="card">
+        <div class="success-icon">
+            <i class="fas fa-check"></i>
+        </div>
+
+        <h1>Upload Successful!</h1>
+        <a class="subtitle">Your file has been uploaded and is ready to share.</a>
+
+        <div class="link-container">
+            <a href="#"  target="_blank" rel="noopener noreferrer" class="link-text" id="fileLink">N/A</a>
+            <div class="copy-container">
+                <button class="copy-btn" id="copyBtn">
+                    <i class="far fa-copy"></i>
+                    <span id="copyText">Copy Link</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="deletion-info">
+            <i class="fas fa-clock"></i>
+            <strong>Note:</strong> This file will be automatically deleted on <span id="deleteDate"></span>
+        </div>
+
+        <div class="qr-section">
+            <h3 class="qr-title">Scan to Access</h3>
+            <div class="qr-container">
+                <img src="" alt="" id="qrcode">
+            </div>
+        </div>
+
+        <a href="/dashboard" class="back-link">
+            <i class="fas fa-arrow-left"></i>
+            Upload Another File
+        </a>
+    </div>
+</div>
