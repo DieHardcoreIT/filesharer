@@ -1,0 +1,19 @@
+<link rel="stylesheet" href="<%= AssetUrl('/css/index.css') %>">
+<script src="<%= AssetUrl('/js/index.js') %>" defer></script>
+
+<div class="login-page">
+    <section class="login-card panel" aria-labelledby="login-title">
+        <span class="feature-icon" aria-hidden="true"><i class="fas fa-lock"></i></span>
+        <h1 id="login-title">Private File Sharing</h1>
+        <p class="lead">Enter your password to access the upload interface.<br>This platform is exclusively for authorized users.</p>
+        <form id="loginForm">
+            <label for="password">Access password</label>
+            <div class="password-container">
+                <input type="password" id="password" class="password-input" autocomplete="current-password" required aria-describedby="loginError">
+                <button type="button" class="toggle-password icon-button" id="togglePassword" aria-label="Show password" aria-pressed="false"><i class="far fa-eye" aria-hidden="true"></i></button>
+            </div>
+            <p id="loginError" class="field-error" role="alert"></p>
+            <button type="submit" class="primary-button" id="submitPassword">Login</button>
+        </form>
+    </section>
+</div>

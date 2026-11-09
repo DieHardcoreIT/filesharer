@@ -1,0 +1,365 @@
+.workspace
+{
+    max-width: 1160px;
+    padding: 44px 32px 64px;
+    margin: auto;
+}
+.page-heading
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;
+    margin-bottom: 32px;
+}
+.storage-info
+{
+    width: 300px;
+    flex-shrink: 0;
+}
+.storage-header
+{
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 8px;
+}
+.storage-header strong
+{
+    color: var(--ink);
+    font-weight: 600;
+}
+meter
+{
+    width: 100%;
+    height: 6px;
+    display: block;
+}
+meter::-webkit-meter-bar
+{
+    background: var(--line);
+    border: 0;
+    border-radius: 5px;
+}
+meter::-webkit-meter-optimum-value
+{
+    background: var(--accent);
+    border-radius: 5px;
+}
+meter::-moz-meter-bar
+{
+    background: var(--accent);
+}
+.share-grid
+{
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 248px;
+    gap: 0;
+    align-items: start;
+}
+.upload-section
+{
+    padding: 28px;
+    min-width: 0;
+}
+.tab-container
+{
+    display: flex;
+    gap: 4px;
+    padding: 4px;
+    background: #f0f3fa;
+    border-radius: 10px;
+    margin-bottom: 28px;
+}
+.tab
+{
+    flex: 1;
+    min-width: 0;
+    padding: 11px 8px;
+    border: 0;
+    border-radius: 7px;
+    background: transparent;
+    color: var(--muted);
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+.tab i
+{
+    margin-right: 7px;
+}
+.tab.active
+{
+    background: white;
+    color: var(--accent);
+    box-shadow: 0 1px 4px #20283f12;
+}
+.upload-content
+{
+    display: none;
+}
+.upload-content.active
+{
+    display: block;
+}
+.file-upload
+{
+    border: 1.5px dashed #b9c5e1;
+    border-radius: 12px;
+    text-align: center;
+    padding: 40px 20px;
+    background: #fafbff;
+}
+.file-upload .feature-icon
+{
+    margin: 0 auto 20px;
+}
+.file-upload h2
+{
+    margin-bottom: 8px;
+}
+.file-picker-actions
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 24px;
+}
+.file-input
+{
+    display: none;
+}
+.file-preview
+{
+    display: none;
+    justify-content: space-between;
+    align-items: start;
+    gap: 12px;
+    margin-top: 20px;
+    padding: 16px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+}
+.file-selection-details
+{
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+#file-name
+{
+    font-size: 14px;
+    font-weight: 600;
+}
+#file-size
+{
+    color: var(--muted);
+    font-size: 12px;
+    margin-top: 4px;
+}
+.file-list
+{
+    color: var(--muted);
+    font-size: 13px;
+    padding-left: 18px;
+    margin: 12px 0 0;
+    line-height: 1.9;
+}
+.upload-actions
+{
+    display: flex;
+    grid-column: 1 / -1;
+    justify-content: flex-end;
+    gap: 12px;
+    flex-wrap: wrap;
+    border-top: 1px solid var(--line);
+    margin: 0;
+    padding: 20px 28px;
+}
+.upload-feedback
+{
+    margin-top: 20px;
+    color: var(--accent);
+    font-size: 13px;
+}
+progress
+{
+    width: 100%;
+    height: 6px;
+    accent-color: var(--accent);
+    border: 0;
+    margin-top: 10px;
+}
+progress::-webkit-progress-bar
+{
+    background: var(--line);
+    border-radius: 5px;
+}
+progress::-webkit-progress-value
+{
+    background: var(--accent);
+    border-radius: 5px;
+}
+.share-settings
+{
+    padding: 28px 24px;
+    align-self: stretch;
+    border-left: 1px solid var(--line);
+    border-radius: 0 18px 0 0;
+    background: #fafbff;
+}
+.expiration-section
+{
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+.expiration-section legend
+{
+    float: left;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 0;
+    font-size: 14px;
+    font-weight: 600;
+}
+.expiration-options
+{
+    clear: both;
+    display: grid;
+    gap: 8px;
+}
+.expiration-option
+{
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    min-height: 44px;
+    padding: 10px 12px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    margin: 0;
+    font-weight: 400;
+    cursor: pointer;
+}
+.expiration-option:has(input:checked)
+{
+    background: var(--tint);
+    border-color: #cbd5f2;
+    color: var(--accent);
+    font-weight: 600;
+}
+.expiration-option input
+{
+    margin: 0;
+    width: 16px;
+    height: 16px;
+    accent-color: var(--accent);
+}
+.expiry-note
+{
+    display: flex;
+    align-items: start;
+    gap: 10px;
+    color: var(--muted);
+    font-size: 13px;
+    padding: 20px 8px;
+}
+.expiry-note i
+{
+    margin-top: 4px;
+}
+@media (max-width: 800px)
+{
+    .share-grid
+    {
+        grid-template-columns: minmax(0, 1fr);
+    }
+    .share-settings
+    {
+        border-left: 0;
+        border-top: 1px solid var(--line);
+        border-radius: 0;
+        padding: 24px 28px;
+    }
+    .expiration-options
+    {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 4px;
+    }
+    .expiration-option
+    {
+        padding: 10px 6px;
+        gap: 7px;
+        justify-content: center;
+        font-size: 13px;
+    }
+    .expiry-note
+    {
+        padding: 12px 4px 0;
+    }
+}
+@media (max-width: 600px)
+{
+    .workspace
+    {
+        padding: 28px 16px 40px;
+    }
+    .page-heading
+    {
+        display: block;
+        margin-bottom: 24px;
+    }
+    .storage-info
+    {
+        width: 100%;
+        margin-top: 24px;
+    }
+    .upload-section
+    {
+        padding: 20px;
+    }
+    .tab
+    {
+        font-size: 12px;
+    }
+    .tab i
+    {
+        display: none;
+    }
+    .file-upload
+    {
+        padding: 28px 12px;
+    }
+    .file-upload h2
+    {
+        font-size: 17px;
+    }
+    .file-picker-actions
+    {
+        gap: 8px;
+    }
+    .file-picker-actions button
+    {
+        padding: 10px 12px;
+        font-size: 12px;
+    }
+    .expiration-options
+    {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .upload-btn
+    {
+        width: 100%;
+    }
+}
+@media (max-width: 360px)
+{
+    .expiration-options
+    {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}

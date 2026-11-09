@@ -1,0 +1,51 @@
+.login-page
+{
+    display: grid;
+    place-items: center;
+    min-height: 100svh;
+    padding: 40px 20px;
+}
+.login-card
+{
+    width: 100%;
+    max-width: 460px;
+    padding: 40px;
+}
+.login-card .feature-icon
+{
+    margin-bottom: 28px;
+}
+.login-card h1
+{
+    font-size: 32px;
+}
+#loginForm
+{
+    margin-top: 32px;
+}
+.password-container
+{
+    position: relative;
+}
+.password-container .password-input
+{
+    padding-right: 54px;
+}
+.toggle-password
+{
+    position: absolute;
+    right: 4px;
+    top: 4px;
+}
+#submitPassword
+{
+    width: 100%;
+    margin-top: 24px;
+}
+@media (max-width: 600px)
+{
+    .login-card
+    {
+        padding: 28px;
+    }
+}

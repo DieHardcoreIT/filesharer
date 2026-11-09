@@ -1,0 +1,71 @@
+<link rel="stylesheet" href="<%= AssetUrl('/css/dashboard.css') %>">
+<script src="<%= AssetUrl('/vendor/zip.min.js') %>" defer></script>
+<script src="<%= AssetUrl('/js/file-selection.js') %>" defer></script>
+<script src="<%= AssetUrl('/js/dashboard.js') %>" defer></script>
+
+<div class="workspace">
+    <div class="page-heading">
+        <h1>Create a share</h1>
+        <section class="storage-info" aria-label="Storage Usage">
+            <div class="storage-header"><span>Storage Usage</span><span><strong><%= diskSpaceInfo.free %></strong> free of <%= diskSpaceInfo.size %></span></div>
+            <meter min="0" max="100" value="<%= diskSpaceInfo.percentUsed %>" aria-label="Storage used"></meter>
+        </section>
+    </div>
+    <div class="share-grid panel">
+        <section class="upload-section" aria-label="Content to share">
+            <div class="tab-container" role="group" aria-label="Share type">
+                <button type="button" class="tab active" data-tab="file" aria-pressed="true"><i class="far fa-folder" aria-hidden="true"></i> Files</button>
+                <button type="button" class="tab" data-tab="text" aria-pressed="false"><i class="fas fa-align-left" aria-hidden="true"></i> Text</button>
+                <button type="button" class="tab" data-tab="link" aria-pressed="false"><i class="fas fa-link" aria-hidden="true"></i> Link</button>
+            </div>
+            <div class="upload-content active" id="file-content">
+                <div id="upload-area" class="file-upload">
+                    <span class="feature-icon" aria-hidden="true"><i class="fas fa-arrow-up"></i></span>
+                    <h2>Drop files or folders here</h2>
+                    <p class="muted">Multiple files and folders are combined into one ZIP.</p>
+                    <div class="file-picker-actions">
+                        <button type="button" class="browse-btn secondary-button"><i class="far fa-file" aria-hidden="true"></i> Select files</button>
+                        <button type="button" class="folder-btn secondary-button" id="browseFolder"><i class="far fa-folder" aria-hidden="true"></i> Select folder</button>
+                    </div>
+                    <input type="file" class="file-input" id="fileInput" multiple aria-label="Choose files">
+                    <input type="file" class="file-input" id="folderInput" webkitdirectory multiple aria-label="Choose a folder">
+                </div>
+                <div id="file-preview" class="file-preview" aria-live="polite">
+                    <div class="file-selection-details"><div id="file-name"></div><div id="file-size"></div><ul id="file-list" class="file-list"></ul></div>
+                    <button type="button" id="remove-file" class="remove-file icon-button" aria-label="Clear selected files and folders"><i class="far fa-trash-alt" aria-hidden="true"></i></button>
+                </div>
+                <p id="file-error" class="field-error" role="alert"></p>
+            </div>
+            <div class="upload-content" id="text-content">
+                <label for="textContent">Text to share</label>
+                <textarea id="textContent" placeholder="Write or paste your text here." rows="9"></textarea>
+            </div>
+            <div class="upload-content" id="link-content">
+                <label for="linkContent">Link to share</label>
+                <input type="url" id="linkContent" placeholder="https://example.com" inputmode="url">
+            </div>
+            <div class="upload-feedback" id="uploadFeedback" hidden>
+                <p id="uploadStatus" role="status" aria-live="polite"></p>
+                <progress id="uploadProgress" max="100" value="0" aria-label="Upload progress" hidden></progress>
+            </div>
+            <p id="shareError" class="field-error" role="alert"></p>
+        </section>
+        <aside class="share-settings">
+            <fieldset class="expiration-section">
+                <legend>Link expires after</legend>
+                <div class="expiration-options">
+                    <label class="expiration-option"><input type="radio" name="expiration" value="1h"><span>1 hour</span></label>
+                    <label class="expiration-option"><input type="radio" name="expiration" value="4h" checked><span>4 hours</span></label>
+                    <label class="expiration-option"><input type="radio" name="expiration" value="1d"><span>1 day</span></label>
+                    <label class="expiration-option"><input type="radio" name="expiration" value="7d"><span>7 days</span></label>
+                    <label class="expiration-option"><input type="radio" name="expiration" value="30d"><span>30 days</span></label>
+                </div>
+            </fieldset>
+            <p class="expiry-note"><i class="far fa-clock" aria-hidden="true"></i> Shared content is automatically deleted when the link expires.</p>
+        </aside>
+            <div class="upload-actions">
+                <button type="button" class="secondary-button" id="cancelUpload" hidden>Cancel upload</button>
+                <button type="button" class="upload-btn primary-button">Create share link <i class="fas fa-arrow-right" aria-hidden="true"></i></button>
+            </div>
+    </div>
+</div>

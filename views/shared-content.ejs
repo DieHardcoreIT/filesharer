@@ -1,0 +1,22 @@
+<link rel="stylesheet" href="<%= AssetUrl('/css/shared-content.css') %>">
+<script src="<%= AssetUrl('/js/clipboard.js') %>" defer></script>
+<script src="<%= AssetUrl('/js/shared-content.js') %>" defer></script>
+
+<div class="result-page">
+    <section class="content-card panel" aria-labelledby="contentTitle">
+        <p class="eyebrow" id="contentType"><i class="fas fa-<%= contentType === 'link' ? 'link' : 'align-left' %>" aria-hidden="true"></i> <%= contentType === 'link' ? 'SHARED LINK' : 'SHARED TEXT' %></p>
+        <h1 id="contentTitle"><%= contentType === 'link' ? 'A link for you.' : 'A note for you.' %></h1>
+        <div class="content-container">
+            <% if (contentType === 'link')
+            { %>
+                <a href="<%= content %>" target="_blank" rel="noopener noreferrer" id="linkContent" class="content-link"><%= content %><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+            <% }
+            else
+            { %>
+                <div class="content-text" id="textContent"><%= content %></div>
+            <% } %>
+        </div>
+        <div class="content-actions"><button type="button" class="copy-btn secondary-button" id="copyBtn"><i class="far fa-copy" aria-hidden="true"></i><span id="copyText"><%= contentType === 'link' ? 'Copy Link' : 'Copy Content' %></span></button></div>
+        <p id="copyError" class="field-error" role="alert"></p>
+    </section>
+</div>

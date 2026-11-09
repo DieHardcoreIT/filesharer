@@ -1,0 +1,22 @@
+<link rel="stylesheet" href="<%= AssetUrl('/css/upload-success.css') %>">
+<script src="<%= AssetUrl('/js/clipboard.js') %>" defer></script>
+<script src="<%= AssetUrl('/js/upload-success.js') %>" defer></script>
+
+<div class="result-page">
+    <section class="result-card panel" aria-labelledby="success-title">
+        <span class="status-label"><i class="fas fa-check" aria-hidden="true"></i> READY TO SHARE</span>
+        <h1 id="success-title">Your link is ready.</h1>
+        <p id="sharedName" class="lead"></p>
+        <div class="result-grid">
+            <div class="share-details">
+                <p class="field-label">Sharing link</p>
+                <a href="#" target="_blank" rel="noopener noreferrer" class="link-text" id="fileLink"></a>
+                <button type="button" class="copy-btn primary-button" id="copyBtn"><i class="far fa-copy" aria-hidden="true"></i><span id="copyText">Copy Link</span></button>
+                <p id="copyError" class="field-error" role="alert"></p>
+                <div class="deletion-info"><i class="far fa-clock" aria-hidden="true"></i><div><span class="muted">Available until</span><strong id="deleteDate"></strong></div></div>
+            </div>
+            <div class="qr-section"><img alt="QR code for the sharing link" id="qrcode"><p class="muted">Scan to open</p></div>
+        </div>
+        <a href="/dashboard" class="back-link"><i class="fas fa-arrow-left" aria-hidden="true"></i> Create another share</a>
+    </section>
+</div>

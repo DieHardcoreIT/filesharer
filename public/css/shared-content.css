@@ -1,0 +1,52 @@
+.content-card
+{
+    padding: 40px;
+}
+.content-container
+{
+    margin-top: 28px;
+    padding: 24px;
+    border: 1px solid var(--line);
+    background: #fafbff;
+    border-radius: 12px;
+    max-height: 60vh;
+    overflow: auto;
+}
+.content-text
+{
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    line-height: 1.8;
+}
+.content-link
+{
+    display: block;
+    overflow-wrap: anywhere;
+    line-height: 1.8;
+}
+.content-link i
+{
+    margin-left: 10px;
+    font-size: 12px;
+}
+.content-actions
+{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 24px;
+}
+@media (max-width: 600px)
+{
+    .content-card
+    {
+        padding: 28px 24px;
+    }
+    .content-container
+    {
+        padding: 18px;
+    }
+    .copy-btn
+    {
+        width: 100%;
+    }
+}

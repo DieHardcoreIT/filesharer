@@ -1,0 +1,84 @@
+.result-card
+{
+    padding: 40px;
+}
+.result-grid
+{
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 170px;
+    gap: 36px;
+    margin: 32px 0;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--line);
+}
+.link-text
+{
+    display: block;
+    overflow-wrap: anywhere;
+    padding: 16px;
+    border: 1px solid var(--line);
+    background: #fafbff;
+    border-radius: 10px;
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 16px;
+}
+.deletion-info
+{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-top: 28px;
+    color: var(--muted);
+}
+.deletion-info span, .deletion-info strong
+{
+    display: block;
+    font-size: 13px;
+}
+.deletion-info strong
+{
+    color: var(--ink);
+    margin-top: 3px;
+    font-weight: 600;
+}
+.qr-section
+{
+    text-align: center;
+    padding-top: 4px;
+}
+.qr-section img
+{
+    width: 160px;
+    height: 160px;
+    max-width: 100%;
+    display: block;
+    margin: 0 auto 12px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 6px;
+}
+@media (max-width: 600px)
+{
+    .result-card
+    {
+        padding: 28px 24px;
+    }
+    .result-grid
+    {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 28px;
+    }
+    .qr-section
+    {
+        text-align: left;
+    }
+    .qr-section img
+    {
+        margin-left: 0;
+    }
+    .copy-btn
+    {
+        width: 100%;
+    }
+}

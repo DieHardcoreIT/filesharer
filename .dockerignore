@@ -1,0 +1,15 @@
+node_modules
+npm-debug.log
+Dockerfile
+docker-compose.yml
+.git
+.gitignore
+uploads/
+metadata/
+# Evtl. lokale Konfigurationsdateien oder IDE-Ordner
+.vscode/
+README.md
+.idea/
+tmp_chunks/
+test/
+.env
